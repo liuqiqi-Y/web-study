@@ -20,6 +20,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 	// 	fmt.Fprintf(w, err.Error())
 	// 	return
 	// }
+	fmt.Println("收到请求！")
 	fmt.Fprintf(w, `<!DOCTYPE html>
 	<html>
 	<head>
@@ -35,7 +36,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/w", login)
-	err := http.ListenAndServe("0.0.0.0:8880", nil)
+	err := http.ListenAndServe("0.0.0.0:80", nil)
 	if err != nil {
 		fmt.Println("http listen failed")
 	}
